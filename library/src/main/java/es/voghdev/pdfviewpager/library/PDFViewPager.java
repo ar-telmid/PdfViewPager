@@ -24,6 +24,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import es.voghdev.pdfviewpager.library.adapter.PDFPagerAdapter;
 
+import java.io.File;
+
 public class PDFViewPager extends ViewPager {
     protected Context context;
 
@@ -61,6 +63,12 @@ public class PDFViewPager extends ViewPager {
 
             a.recycle();
         }
+    }
+
+    
+    //added from bouazza
+    public void init(File pdfFile) {
+		initAdapter(context, pdfFile.getAbsolutePath());
     }
 
     protected void initAdapter(Context context, String pdfPath) {
